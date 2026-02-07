@@ -79,7 +79,7 @@ def get_socratic_response(state: str, response: str) -> BotResponse:
         return BotResponse(
             next_state="RESOLUTION",
             message=f"Entiendo. {evidence or msg} Reflexionemos sobre esto: {fact_msg}",
-            options=["Deseo profundizar", "Cerrar sesión"],
+            options=["Deseo profundizar", "Terminar"],
             evidence=evidence
         )
 
