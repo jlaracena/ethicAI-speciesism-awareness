@@ -1,0 +1,10 @@
+{
+  "sentiencia_facts": [
+    {"especie": "cerdo", "atributo": "inteligencia", "dato": "Superan a niños de 3 años en juegos de memoria."},
+    {"especie": "vaca", "atributo": "emoción", "dato": "Forman vínculos de amistad profundos y se estresan si las separan."}
+  ],
+  "falacias_especistas": {
+    "cadena_alimenticia": "La cadena alimenticia es un concepto ecológico, no un código de ética para seres con supermercados.",
+    "necesidad_biologica": "La ciencia nutricional moderna confirma que podemos vivir sanos sin productos animales."
+  }
+}
