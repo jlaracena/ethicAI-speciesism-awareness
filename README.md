@@ -5,6 +5,11 @@
 
 Un **Tutor Socrático** de última generación diseñado para guiar a los usuarios a través de una autorreflexión profunda sobre el especismo y nuestra relación con los demás animales sintientes. Inspirado en la mayéutica, este bot no juzga: pregunta para que tú mismo descubras tus propias contradicciones.
 
+## 🌐 App en Vivo
+
+Puedes acceder a la aplicación directamente desde este enlace:
+👉 **[https://ethicai-speciesism-395778620224.us-central1.run.app/](https://ethicai-speciesism-395778620224.us-central1.run.app/)**
+
 ---
 
 ## 🌟 Visión del Proyecto
