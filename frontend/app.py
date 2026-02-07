@@ -6,9 +6,21 @@ import base64
 st.set_page_config(
     page_title="ethicAI - Socratic Tutor", 
     page_icon="🌿", 
-    layout="wide", # Wider layout for better background visibility
-    initial_sidebar_state="expanded"
+    layout="centered", # Centered layout for a focus on the dialogue
+    initial_sidebar_state="collapsed"
 )
+
+# Force sidebar removal via CSS
+st.markdown("""
+    <style>
+    [data-testid="stSidebar"] {
+        display: none;
+    }
+    [data-testid="stSidebarCollapsedControl"] {
+        display: none;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # Session State Initialization
 if "current_state" not in st.session_state:
@@ -62,27 +74,6 @@ st.markdown("""
     /* Primary color override */
     :root {
         --primary-color: #2d5a27;
-    }
-
-    /* Sidebar - Beautifully styled */
-    [data-testid="stSidebar"] {
-        background-color: rgba(255, 252, 240, 0.6) !important;
-        backdrop-filter: blur(20px);
-        border-right: 1px solid rgba(220, 200, 150, 0.3);
-    }
-    
-    [data-testid="stSidebar"] div.stMarkdown, 
-    [data-testid="stSidebar"] div.stAlert {
-        border-radius: 20px;
-        background-color: rgba(255, 255, 255, 0.75) !important;
-        border: 1px solid rgba(220, 200, 150, 0.4);
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    [data-testid="stSidebar"] * {
-        color: #3d2b1f !important;
     }
 
     /* Buttons */
@@ -201,16 +192,6 @@ st.markdown(progress_html, unsafe_allow_html=True)
 st.markdown("<h1 class='bot-header'>ethicAI</h1>", unsafe_allow_html=True)
 st.markdown("<h2 class='bot-subheader'>Espejo de Conciencia: Un viaje socrático</h2>", unsafe_allow_html=True)
 
-# Sidebar
-st.sidebar.markdown("## 🌱 Tu Diálogo")
-if st.session_state.history:
-    for entry in st.session_state.history:
-        st.sidebar.markdown(f"**Tú:** {entry['user']}")
-        st.sidebar.markdown(f"**Guía:** {entry['bot'][:100]}...")
-        st.sidebar.markdown("---")
-else:
-    st.sidebar.markdown("Bienvenido. Aquí broten las semillas de nuestra reflexión.")
-
 def send_response(option):
     try:
         resp = requests.post("http://localhost:8000/evaluate", json={
@@ -228,18 +209,12 @@ def send_response(option):
     except Exception as e:
         st.error(f"Error de conexión con el backend: {e}")
 
-# Main Layout
-col1, col2 = st.columns([0.6, 0.4])
+# Main Layout - Centered
+st.markdown(f"<div class='chat-bubble'>{st.session_state.message}</div>", unsafe_allow_html=True)
 
-with col1:
-    st.markdown(f"<div class='chat-bubble'>{st.session_state.message}</div>", unsafe_allow_html=True)
-    
-    # Elegant Buttons
-    btn_cols = st.columns(len(st.session_state.options))
-    for i, option in enumerate(st.session_state.options):
-        if btn_cols[i].button(option, key=f"btn_{option}_{st.session_state.current_state}"):
-            send_response(option)
-            st.rerun()
-
-st.sidebar.markdown("---")
-st.sidebar.info("Tutor socrático para la toma de conciencia sobre el especismo.")
+# Elegant Buttons
+btn_cols = st.columns(len(st.session_state.options))
+for i, option in enumerate(st.session_state.options):
+    if btn_cols[i].button(option, key=f"btn_{option}_{st.session_state.current_state}"):
+        send_response(option)
+        st.rerun()
