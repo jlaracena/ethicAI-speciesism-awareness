@@ -23,14 +23,13 @@ En un mundo donde la desconexión con el origen de nuestro consumo es la norma, 
 - **Estilo**: Outfit (Google Fonts)
 
 ## 📸 Demo Visual
-*(Aquí se incluiría un GIF de la interfaz Zen)*
-![Preview](frontend/assets/background.png)
+![Preview](frontend/assets/demo.png)
 
 ## 📥 Instalación y Uso Local
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/[USUARIO]/ethicAI-speciesism-awareness.git
+   git clone https://github.com/jlaracena/ethicAI-speciesism-awareness.git
    cd ethicAI-speciesism-awareness
    ```
 
@@ -56,4 +55,6 @@ Este es un proyecto de código abierto parte de la iniciativa **ethicAI-hub**. L
 
 ---
 
-**Desarrollado con ❤️ por Jinshi (antigravity) para ethicAI-hub.**
+## 📜 Licencia
+
+Este proyecto es parte de la iniciativa **EthicAI Hub** para la protección y educación sobre los derechos de los animales. El código se distribuye bajo fines éticos y educativos.
