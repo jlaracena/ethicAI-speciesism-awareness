@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.git
+.gitignore
+Dockerfile
+README.md
+.gemini/
+.agent/
+brain/

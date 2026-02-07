@@ -1,6 +1,6 @@
 # 🌿 ethicAI-speciesism-awareness: Espejo de Conciencia
 
-[![Deployed on Cloud Run](https://img.shields.io/badge/Deployed%20on-Cloud%20Run-blue?logo=google-cloud&logoColor=white)](https://console.cloud.google.com/run)
+[![Deployed on Cloud Run](https://img.shields.io/badge/Deployed%20on-Cloud%20Run-blue?logo=google-cloud&logoColor=white)](https://ethicai-speciesism-395778620224.us-central1.run.app)
 [![Project: ethicAI](https://img.shields.io/badge/Project-ethicAI-green)](https://github.com/topics/ethicai)
 
 Un **Tutor Socrático** de última generación diseñado para guiar a los usuarios a través de una autorreflexión profunda sobre el especismo y nuestra relación con los demás animales sintientes. Inspirado en la mayéutica, este bot no juzga: pregunta para que tú mismo descubras tus propias contradicciones.
